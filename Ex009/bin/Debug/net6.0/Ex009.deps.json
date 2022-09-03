@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Ex009/1.0.0": {
+      "ex009/1.0.0": {
         "runtime": {
-          "Ex009.dll": {}
+          "ex009.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Ex009/1.0.0": {
+    "ex009/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

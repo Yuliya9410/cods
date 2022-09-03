@@ -1,66 +1,54 @@
-﻿// Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+﻿// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 /*
-void ShowNumbers(int n)
-{
-    if(n > 1) ShowNumbers(n - 1);
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+int temp = m;
 
-    Console.Write(n + " ");
+if(m > n)
+{
+    m = n;
+    n = temp;
 }
 
-ShowNumbers(10);
+PrintSumm(m, n, temp = 0);
+
+void PrintSumm(int m, int n, int summ)
+{
+    summ = summ + n;
+    if(n <= m)
+    {
+        Console.Write($"Сумма элементов = {summ}");
+        return;
+    }
+    PrintSumm(m, n- 1, summ);
+}
+
+int InputNumbers(string input)
+{
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
+}
 */
-// Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
-/*
-void ShowNumbers(int n)
-{
-    if(n > 1) ShowNumbers(n - 1);
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
-    Console.Write(n + " ");
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+
+int fuctionAkkerman = Ack(m,n);
+
+Console.Write($"Функция Аккермана = {functionAkkerman}");
+
+int Ack(int m, int n)
+{
+    if(m==0) return n + 1;
+    else if(n==0) return Ack(m - 1, 1);
+    else return Ack(m - 1, Ack(m, n - 1));
 }
 
-ShowNumbers(10);
-
-int FindSum(int n)
+int InputNumbers(string input)
 {
-    if(n > 0)
-    return FindSum(n / 10) + n % 10;
-    else
-    return n;
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
 }
-
-ShowNumbers(10);
-Console.WriteLine();
-Console.WriteLine(FindSum(12345));
-*/
-// Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-/*
-void ShowNumbers(int n, int m)
-{
-    if(m!=n)
-    {
-        if(n > m)
-    {
-        ShowNumbers(n - 1, m);
-        Console.Write(n + " ");
-    }
-    else
-    {
-        ShowNumbers(m - 1, n);
-        Console.Write(m + " ");
-    }
-    }
-}
-ShowNumbers(5,10);
-*/
-// Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
-
-int NumberPower(int a, int b)
-{
-    if(b!=0)
-    {
-        return NumberPower(a, b - 1) * a;
-    }
-    else
-    return 1;
-}
-Console.WriteLine(NumberPower(3,3));
